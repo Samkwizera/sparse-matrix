@@ -12,7 +12,10 @@ def get_matrix_file(prompt):
     while True:
         file_path = input(prompt)
         try:
-            return SparseMatrix(file_path=file_path)
+            print(f"Loading matrix from {file_path}...")
+            matrix = SparseMatrix(file_path=file_path)
+            print(f"Matrix loaded successfully. Dimensions: {matrix.rows}x{matrix.cols}")
+            return matrix
         except FileNotFoundError:
             print(f"Error: File '{file_path}' not found. Please try again.")
         except ValueError as e:
@@ -36,6 +39,7 @@ def main():
             matrix2 = get_matrix_file("Enter path to second matrix file: ")
             
             # Perform operation
+            print("\nPerforming operation...")
             if choice == '1':
                 result = matrix1.add(matrix2)
                 operation = "addition"
@@ -46,8 +50,11 @@ def main():
                 result = matrix1.multiply(matrix2)
                 operation = "multiplication"
             
+            print(f"Operation completed. Result matrix dimensions: {result.rows}x{result.cols}")
+            
             # Save result
             output_file = input("Enter path for output file: ")
+            print(f"Saving result to {output_file}...")
             result.save_to_file(output_file)
             print(f"\nMatrix {operation} completed successfully!")
             print(f"Result saved to: {output_file}")
