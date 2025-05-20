@@ -1,5 +1,8 @@
 # Sparse Matrix Operations
 
+Created by Samuel kwizera
+Email: s.ihimbazwe@alustudent.com
+
 This program implements efficient sparse matrix operations including addition, subtraction, and multiplication. It is designed to handle large matrices while optimizing memory usage by only storing non-zero elements.
 
 ## Features
