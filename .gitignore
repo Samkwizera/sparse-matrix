@@ -1,6 +1,5 @@
 # Generated output files
 output.txt
-output/*.txt
 output/*.dat
 
 # Python cache files
