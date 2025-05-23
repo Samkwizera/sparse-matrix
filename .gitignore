@@ -1,6 +1,7 @@
 # Generated output files
 output.txt
-output/
+output/*.txt
+output/*.dat
 
 # Python cache files
 __pycache__/
