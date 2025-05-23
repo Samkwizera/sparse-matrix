@@ -12,7 +12,6 @@ def main():
     sample_input_dir = 'sample_input'
     files = os.listdir(sample_input_dir)
     dimensions = {}
-
     for file in files:
         file_path = os.path.join(sample_input_dir, file)
         try:
@@ -20,11 +19,9 @@ def main():
             dimensions[file] = (rows, cols)
         except Exception as e:
             print(f"Error reading {file}: {e}")
-
     print("File dimensions:")
     for file, (rows, cols) in dimensions.items():
         print(f"{file}: rows={rows}, cols={cols}")
-
     print("\nCompatible pairs for multiplication:")
     for file1, (rows1, cols1) in dimensions.items():
         for file2, (rows2, cols2) in dimensions.items():
